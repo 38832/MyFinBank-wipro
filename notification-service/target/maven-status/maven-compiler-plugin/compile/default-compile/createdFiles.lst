@@ -1,0 +1,5 @@
+com\myfinbank\notificationservice\entity\NotificationEvent.class
+com\myfinbank\notificationservice\controller\NotificationController.class
+com\myfinbank\notificationservice\NotificationServiceApplication.class
+com\myfinbank\notificationservice\repository\NotificationEventRepository.class
+com\myfinbank\notificationservice\exception\GlobalExceptionHandler.class

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>MyFinBank Customer Portal</title>
+    <link rel="stylesheet" href="customer.css" />
+</head>
+<body>
+<header class="topbar">
+    <div>
+        <p class="eyebrow">Customer Portal</p>
+        <h1>MyFinBank</h1>
+    </div>
+    <button id="logoutButton" class="secondary">Logout</button>
+</header>
+<main class="shell">
+    <section class="panel">
+        <h2>Register</h2>
+        <form id="registerForm" class="grid three">
+            <label>Name<input type="text" id="name" required /></label>
+            <label>Email<input type="email" id="email" required /></label>
+            <label>Password<input type="password" id="password" required /></label>
+            <button type="submit">Register</button>
+        </form>
+        <div id="registerMessage" class="message"></div>
+    </section>
+    <section class="panel">
+        <h2>Login</h2>
+        <form id="loginForm" class="grid two">
+            <label>Email<input type="email" id="loginEmail" required /></label>
+            <label>Password<input type="password" id="loginPassword" required /></label>
+            <button type="submit">Login</button>
+        </form>
+        <div id="loginMessage" class="message"></div>
+    </section>
+    <section class="panel">
+        <div class="panel-heading">
+            <h2>Account Actions</h2>
+            <span>Deposit, withdraw, transfer, and history</span>
+        </div>
+        <div id="accountActions" class="hidden">
+            <div class="grid two">
+                <label>Customer ID<input type="number" id="customerId" /></label>
+                <label>Amount<input type="number" id="amount" /></label>
+            </div>
+            <div class="actions">
+                <button id="depositBtn">Deposit</button>
+                <button id="withdrawBtn" class="warning">Withdraw</button>
+                <button id="transferBtn">Transfer</button>
+                <button id="transactionsBtn">Transactions</button>
+                <button id="loansBtn">Loans</button>
+            </div>
+        </div>
+    </section>
+    <section class="panel">
+        <div class="panel-heading">
+            <h2>Loan and Support</h2>
+            <span>Apply, calculate EMI, and contact support</span>
+        </div>
+        <div class="grid three">
+            <label>Loan Amount<input type="number" id="loanAmount" /></label>
+            <label>Term Months<input type="number" id="loanMonths" /></label>
+            <label>Annual Rate<input type="number" id="loanRate" step="0.1" /></label>
+        </div>
+        <div class="actions">
+            <button id="applyLoanBtn">Apply Loan</button>
+            <button id="emiBtn">Calculate EMI</button>
+        </div>
+        <label>Support Message<textarea id="chatMessage"></textarea></label>
+        <button id="chatBtn">Send Chat</button>
+    </section>
+    <section class="panel">
+        <h2>Output</h2>
+        <pre id="output"></pre>
+    </section>
+</main>
+<footer>MyFinBank Customer Portal</footer>
+<script src="customer.js"></script>
+</body>
+</html>

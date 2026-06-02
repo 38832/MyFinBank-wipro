@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing">
+<w:body>
+    <w:bookmarkStart w:id="22" w:name="problem-statement-myfinbank" />
+    <w:p><w:pPr><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t xml:space="preserve">Problem Statement: MyFinBank</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="FirstParagraph" /></w:pPr><w:r><w:t xml:space="preserve">MyFinBank is a popular banking application, which helps customers to perform banking transactions without visiting the bank personally.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="BodyText" /></w:pPr><w:r><w:t xml:space="preserve">There are 2 users in this application:</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1001" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Customer</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1001" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Admin</w:t></w:r></w:p>
+    <w:bookmarkStart w:id="20" w:name="customer-stories" />
+    <w:p><w:pPr><w:pStyle w:val="Heading2" /></w:pPr><w:r><w:t xml:space="preserve">Customer Stories</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1002" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">As a Customer, I should be able to register, login and logout from the application.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1002" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">As a Customer, I should be able to perform the following operations with respect to bank balance:</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="1" /><w:numId w:val="1003" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Deposit</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="1" /><w:numId w:val="1003" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Withdraw</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="1" /><w:numId w:val="1003" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Fund Transfer</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1002" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">As a Customer, I should be able to generate a transaction id, every time a transaction is performed.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1002" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">As a Customer, I should be able to transfer money to other investment categories in the same bank such as:</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="1" /><w:numId w:val="1004" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Loan</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="1" /><w:numId w:val="1004" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Recurring Deposits</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="1" /><w:numId w:val="1004" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Fixed Deposits</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1002" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">As a Customer, I should be able to calculate the loan EMI based on the loan amount, rate of interest and the number of months.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1002" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">As a Customer, I should be able to apply for loans.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1002" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">As a Customer, I should be able to chat with the bank authority for queries, if any.</w:t></w:r></w:p>
+    <w:bookmarkEnd w:id="20" />
+    <w:bookmarkStart w:id="21" w:name="admin-stories" />
+    <w:p><w:pPr><w:pStyle w:val="Heading2" /></w:pPr><w:r><w:t xml:space="preserve">Admin Stories</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1005" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">As an Admin, I should be able to register, login and logout from the application.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1005" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">As an Admin, I should be able to perform CRUD operations on Customers.</w:t></w:r><w:r><w:t xml:space="preserve"> </w:t></w:r><w:r><w:t xml:space="preserve">(Cannot delete customer but can deactivate/activate existing customers)</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1005" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">As an Admin, I should be able to perform CRUD operations on Customer Accounts.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1005" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">As an Admin, I should be able to get mail as soon as any customer’s bank balance turns to zero.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1005" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">As an Admin, I should be able to approve or deny the loan, depending on the customer balance.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1005" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">As an Admin, I should be able to chat with the customers, in case of queries.</w:t></w:r></w:p>
+    <w:bookmarkEnd w:id="21" />
+    <w:bookmarkEnd w:id="22" />
+    <w:bookmarkStart w:id="26" w:name="sprint-plan" />
+    <w:p><w:pPr><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t xml:space="preserve">Sprint Plan</w:t></w:r></w:p>
+    <w:bookmarkStart w:id="23" w:name="sprint-i-objective" />
+    <w:p><w:pPr><w:pStyle w:val="Heading2" /></w:pPr><w:r><w:t xml:space="preserve">Sprint I Objective</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1006" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Create database schema (all tables along with their relationships)</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1006" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Create entities in Spring</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1006" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Create Microservice based structure</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1006" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">CRUD on User and Admin (login, logout, register)</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1006" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Create template using HTML and CSS</w:t></w:r></w:p>
+    <w:bookmarkEnd w:id="23" />
+    <w:bookmarkStart w:id="24" w:name="sprint-ii-objective" />
+    <w:p><w:pPr><w:pStyle w:val="Heading2" /></w:pPr><w:r><w:t xml:space="preserve">Sprint II Objective</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1007" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Develop loan functionality (apply/deny)</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1007" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Implement money transfer functionality (deposit/withdraw)</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1007" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Implement money transfer functionality (Loan/Recurring Deposits/Fixed Deposits)</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1007" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Calculation of Loan EMI</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1007" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Implement Spring Security, JWT</w:t></w:r></w:p>
+    <w:bookmarkEnd w:id="24" />
+    <w:bookmarkStart w:id="25" w:name="sprint-iii-objective" />
+    <w:p><w:pPr><w:pStyle w:val="Heading2" /></w:pPr><w:r><w:t xml:space="preserve">Sprint III Objective</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1008" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Create Data Transfer Objects</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1008" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Create Repository</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1008" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Create Service Layer logic</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1008" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Create controller to direct REST API</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1008" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Create email notification microservice (as customer’s bank balance turns to zero)</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1008" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Integrate FrontEnd with BackEnd</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1008" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Implement chat functionality</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Compact" /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1008" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Add extra features</w:t></w:r></w:p>
+    <w:bookmarkEnd w:id="25" />
+    <w:bookmarkEnd w:id="26" />
+    <w:bookmarkStart w:id="27" w:name="instructions" />
+    <w:p><w:pPr><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t xml:space="preserve">Instructions</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1009" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Create a separate microservice for Customer and functionalities based on the customer using Spring Boot and register all microservices using Eureka Server.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1009" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Create a separate microservice for the Admin and functionalities based on the admin using Spring Boot and register all microservices using Eureka Server.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1009" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Develop an independent microservice dedicated to dispatching email notifications.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1009" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Swagger implementation should be separate for all the microservices.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1009" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Establish the connection between the microservices.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1009" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Use Spring Cloud to share the configuration between the microservices.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1009" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Utilize H2 database for storage purposes, with each microservice having its own database instance.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1009" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Create custom exceptions in each microservice to handle invalid inputs.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1009" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Implement the relationships where applicable, ensuring data consistency across microservices.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1009" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Implement inter-microservice communication as needed, considering asynchronous messaging or RESTful APIs.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1009" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Use Fetch API to integrate FrontEnd (HTML, CSS) or JSP server-side with BackEnd.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:numPr><w:ilvl w:val="0" /><w:numId w:val="1009" /></w:numPr></w:pPr><w:r><w:t xml:space="preserve">Any extra functionality you may add as per the requirement.</w:t></w:r></w:p>
+    <w:bookmarkEnd w:id="27" />
+    <w:sectPr>
+      <w:footnotePr>
+        
+                
+        <w:numRestart w:val="eachSect" />
+        
+              
+      </w:footnotePr>
+    </w:sectPr>
+  </w:body>
+</w:document>

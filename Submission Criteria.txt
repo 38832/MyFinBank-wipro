@@ -1,0 +1,158 @@
+Rubric
+Criteria
+Microservice
+"Deduct 100% if
+1. if user or customer /admin or owner  microservices are not created
+Deduct 50% if
+1. microservice created but functionality of the service is not working properly
+
+
+
+
+"
+Points
+3
+Criteria
+Database
+"Deduct 100% if
+ if database is not created for each microservice separately
+Deduct 50% if
+1.database created but not configured with microservices
+2. database created and configured but not working as per expectations"
+Points
+2
+Criteria
+Spring entities with all required annotations
+"Deduct 100% if
+1. Entitites not created
+Deduct 50%  if
+1. partial entities created"
+Points
+4
+Criteria
+Admin Login (Login/Logout)
+"Deduct 100% if
+1. Admin CRUD not implemented for adding / deleting/Updating the user details 
+Deduct 25%
+1. for each operation if not implemented from CRUD"
+Points
+2
+Criteria
+User Register & Login Operations (Register / existing User Login / Logout)
+"Deduct 100% if
+1. User registration / Login not implemented
+Deduct 25%
+1. If any one is implemented"
+Points
+2
+Criteria
+HTML & CSS template
+"Deduct 100% if
+1. template is not created
+Deduct 50% if
+1. if template is created but missing some basic functionlities like header, footer
+"
+Points
+2
+Criteria
+"Compile time error Class/Components Copy paste code + Code Naming Conventions  Code comments Code indentation Code Implementation + Code output"
+"Deduct 100% if 
+1. the code shows compile time errors 
+2. if the code is copy pasted
+3. No Components / class created
+4. the complete code is written in one file
+5. No proper code constructs are used
+6.The code is not showing the proper output .
+Deduct 50% if
+1. the blank files submitted.
+2. only classes/ components are created 
+3. partial code is written
+4. Partial formating is done 
+5. Code naming conventions not followed
+6. comments are not given
+Deduct 25%
+1. services are not created or not implemented
+2. Routes are not implemented properly
+
+"
+Points
+12
+Criteria
+"Admin /User -CRUD Operations --  Question and Answer (create, remove, update, display, deactivate) / Implement money transfer functionality. (deposit / withdraw) /  Owner update application module (change visibility, add / remove features, …) /songs CRUD for Admin / menu items CRUD for Admin  The playlist or songs CRUD for user / add or remove features from application  /   Develop search functionality  / loan functionality(apply / deny) based on different criteria"
+"Deduct 100% if
+1. If no functionalities implemented
+Deduct 50%
+1. if CRUD is implemented but not working properly
+Note* - deduct the marks as per the functionalities not implemented from the total functionalities asked in their capstone project  
+"
+Points
+12
+Criteria
+"Admin /User Other functionalities --Mark discussion thread / post as completed & questions / answers as approved / Implement money transfer functionality ( Loan / Recurring Deposits / Fixed Deposits) / Create comments / review from user module / visibility restriction for songs / Create or cancel order from user  Create like or comments or answers on other questions or answers / Calculation of Loan EMI / Implement billing option (generate for Owner and view for User)"
+"Deduct 100% if
+1. If no functionalities implemented
+Deduct 50%
+1. if CRUD is implemented but not working properly
+Note* - deduct the marks as per the functionalities not implemented from the total functionalities asked in their capstone project 
+"
+Points
+12
+Criteria
+Spring Security JWT
+"Deduct 100% if
+ 1. If didnt integrate frontend and backend
+2.Spring JWT & Security  is not used in the project
+Deduct 50% if
+1. all the functionalities are not working
+2. Spring JWT is implemented 
+3. Spring Security is implemented "
+Points
+5
+Criteria
+forntend and backend integration
+"Deduct 100% if
+ 1. If didnt integrate frontend and backend
+2.Spring JWT & Security  is not used in the project
+Deduct 50% if
+1. all the functionalities are not working
+2. Spring JWT is implemented 
+3. Spring Security is implemented "
+Points
+8
+Criteria
+Microservice-Communication
+"Deduct 100% if
+1.Complete implementationof  user or customer  / admin or Owner microservice with services are not created
+2. RestTemplate/Feign Client is not used in microservice
+3. Spring cloud & DTO are not used in the project
+Deduct 50%  if
+1. microservice created but complete/overall functionality of the service is not working properly
+2. if eureka server is not used 
+3. Either Cloud or DTO is not implemented"
+Points
+4
+Criteria
+Spring Cloud & DTO
+"Deduct 100% if
+1.Complete implementationof  user or customer  / admin or Owner microservice with services are not created
+2. RestTemplate/Feign Client is not used in microservice
+3. Spring cloud & DTO are not used in the project
+Deduct 50%  if
+1. microservice created but complete/overall functionality of the service is not working properly
+2. if eureka server is not used 
+3. Either Cloud or DTO is not implemented"
+Points
+4
+Criteria
+Global Exception handling
+"Deduct 100% if
+ 1. centralized exception hadling is not implemented
+Deduct 50% if
+1. Implemented but not working properly or partially implemented
+
+
+
+
+"
+Points
+3

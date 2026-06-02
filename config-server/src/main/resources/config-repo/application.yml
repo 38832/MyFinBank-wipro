@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: shared-config
+myfinbank:
+  info: "Shared Spring Cloud config for MyFinBank"
