@@ -3,6 +3,7 @@ package com.myfinbank.customerservice.dto;
 public class LoanRequest {
     private Long customerId;
     private double amount;
+    private String loanType;
     private int termMonths;
     private double rate;
 
@@ -20,6 +21,14 @@ public class LoanRequest {
 
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    public String getLoanType() {
+        return loanType;
+    }
+
+    public void setLoanType(String loanType) {
+        this.loanType = loanType;
     }
 
     public int getTermMonths() {

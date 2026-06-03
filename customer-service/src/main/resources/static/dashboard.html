@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyFinBank Customer Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="customer.css" />
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">M</span>
+            <div>
+                <h1>MyFinBank</h1>
+                <p>Customer Portal</p>
+            </div>
+        </div>
+        <nav class="nav-list" aria-label="Customer navigation">
+            <a class="active" href="#dashboard"><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+            <a href="#actions"><span class="material-symbols-outlined">account_balance</span>Banking</a>
+            <a href="#loans"><span class="material-symbols-outlined">real_estate_agent</span>Loans</a>
+            <a href="#support"><span class="material-symbols-outlined">support_agent</span>Support</a>
+        </nav>
+        <div class="sidebar-user">
+            <span class="material-symbols-outlined">account_circle</span>
+            <div>
+                <small>Logged in as</small>
+                <strong id="sidebarUsername">Customer</strong>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Digital Banking Workspace</p>
+                <h2>Customer Dashboard</h2>
+            </div>
+            <button id="logoutButton" class="ghost-button" type="button">
+                <span class="material-symbols-outlined">logout</span>
+                Logout
+            </button>
+        </header>
+        <div id="notificationContainer" class="notification-toast"></div>
+
+        <section class="hero" id="dashboard">
+            <div>
+                <p class="eyebrow">Welcome Back</p>
+                <h2>Banking actions, loans, transfers, and support in one place.</h2>
+            </div>
+            <div class="hero-stat">
+                <span>Customer ID</span>
+                <strong id="heroCustomerId">-</strong>
+            </div>
+        </section>
+
+        <section id="accountActions" class="dashboard-grid customer-workspace">
+            <article class="panel" id="actions">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Money Movement</p>
+                        <h3>Deposit, Withdraw, Transfer</h3>
+                    </div>
+                    <span class="material-symbols-outlined">swap_horiz</span>
+                </div>
+                <div class="inline-fields">
+                    <label>Customer ID<input type="number" id="customerId" placeholder="Logged-in customer" readonly /></label>
+                    <label>Amount<input type="number" id="amount" placeholder="Amount" /></label>
+                    <label>Target Email<input type="email" id="targetEmail" placeholder="receiver@example.com" /></label>
+                </div>
+                <div class="balance-card" id="balanceCard">
+                    <div>
+                        <span>Available Balance</span>
+                        <strong id="accountBalance">Loading...</strong>
+                        <small id="accountBalanceMeta">Savings account</small>
+                    </div>
+                    <button id="balanceBtn" class="neutral icon-button" type="button" aria-label="Refresh balance">
+                        <span class="material-symbols-outlined">account_balance_wallet</span>
+                    </button>
+                </div>
+                <div class="action-cards">
+                    <button id="depositBtn" type="button"><span class="material-symbols-outlined">arrow_downward</span>Deposit</button>
+                    <button id="withdrawBtn" class="neutral" type="button"><span class="material-symbols-outlined">arrow_upward</span>Withdraw</button>
+                    <button id="transferBtn" type="button"><span class="material-symbols-outlined">sync_alt</span>Transfer</button>
+                    <button id="checkBalanceBtn" class="neutral" type="button"><span class="material-symbols-outlined">account_balance_wallet</span>Check Balance</button>
+                    <button id="transactionsBtn" class="neutral" type="button"><span class="material-symbols-outlined">refresh</span>Refresh Transactions</button>
+                </div>
+            </article>
+
+            <article class="panel" id="loans">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Loan Services</p>
+                        <h3>Apply And Calculate EMI</h3>
+                    </div>
+                    <span class="material-symbols-outlined">real_estate_agent</span>
+                </div>
+                <div class="inline-fields compact">
+                    <label>Loan Type
+                        <select id="loanType">
+                            <option value="Personal Loan">Personal Loan</option>
+                            <option value="Home Loan">Home Loan</option>
+                            <option value="Vehicle Loan">Vehicle Loan</option>
+                            <option value="Education Loan">Education Loan</option>
+                            <option value="Business Loan">Business Loan</option>
+                        </select>
+                    </label>
+                    <label>Loan Amount<input type="number" id="loanAmount" placeholder="10000" /></label>
+                    <label>Term Months<input type="number" id="loanMonths" placeholder="36" /></label>
+                    <label>Annual Rate<input type="number" id="loanRate" step="0.1" placeholder="5.5" /></label>
+                </div>
+                <div class="button-row">
+                    <button id="applyLoanBtn" type="button">Apply Loan</button>
+                    <button id="emiBtn" class="neutral" type="button">Calculate EMI</button>
+                    <button id="loansBtn" class="neutral" type="button">Refresh Loans</button>
+                </div>
+                <div class="result-card" id="emiResult">
+                    <span>Monthly EMI</span>
+                    <strong>Enter loan details and calculate</strong>
+                </div>
+            </article>
+
+            <article class="panel table-panel" id="transactionHistory">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">History</p>
+                        <h3>Recent Transactions</h3>
+                    </div>
+                    <span class="material-symbols-outlined">receipt_long</span>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                        </tr>
+                        </thead>
+                        <tbody id="transactionTableBody">
+                        <tr><td colspan="5">No transactions loaded yet.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article class="panel table-panel" id="loanHistory">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Applications</p>
+                        <h3>Your Loan Applications</h3>
+                    </div>
+                    <span class="material-symbols-outlined">list_alt</span>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Loan ID</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Term</th>
+                            <th>Rate</th>
+                            <th>Status</th>
+                            <th>Applied</th>
+                        </tr>
+                        </thead>
+                        <tbody id="loanTableBody">
+                        <tr><td colspan="7">No loan applications loaded yet.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article class="panel table-panel" id="support">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Support</p>
+                        <h3>Conversation With Bank</h3>
+                    </div>
+                    <span class="material-symbols-outlined">chat</span>
+                </div>
+                <div id="chatThread" class="chat-thread">
+                    <div class="empty-chat">Loading messages...</div>
+                </div>
+                <div class="chat-compose">
+                    <label>New Message<textarea id="chatMessage" placeholder="Type your support message"></textarea></label>
+                    <button id="chatBtn" type="button"><span class="material-symbols-outlined">send</span>Send Message</button>
+                </div>
+            </article>
+        </section>
+    </main>
+</div>
+<script src="dashboard.js"></script>
+</body>
+</html>

@@ -8,6 +8,7 @@ import com.myfinbank.adminservice.repository.*;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,19 +19,34 @@ public class AdminService {
     private final CustomerDataRepository customerRepository;
     private final ChatMessageRepository chatRepository;
     private final CustomerClient customerClient;
+    private final AdminUserRepository adminUserRepository;
     private final AuthenticationManager authenticationManager;
+    private final PasswordEncoder passwordEncoder;
     private final com.myfinbank.adminservice.security.JwtUtil jwtUtil;
 
     public AdminService(CustomerDataRepository customerRepository,
                         ChatMessageRepository chatRepository,
                         CustomerClient customerClient,
+                        AdminUserRepository adminUserRepository,
                         AuthenticationManager authenticationManager,
+                        PasswordEncoder passwordEncoder,
                         com.myfinbank.adminservice.security.JwtUtil jwtUtil) {
         this.customerRepository = customerRepository;
         this.chatRepository = chatRepository;
         this.customerClient = customerClient;
+        this.adminUserRepository = adminUserRepository;
         this.authenticationManager = authenticationManager;
+        this.passwordEncoder = passwordEncoder;
         this.jwtUtil = jwtUtil;
+    }
+
+    public AuthResponse register(String name, String email, String password) {
+        if (adminUserRepository.findByEmail(email).isPresent()) {
+            throw new IllegalArgumentException("Admin already exists with this email");
+        }
+        AdminUser adminUser = new AdminUser(email, name, passwordEncoder.encode(password));
+        adminUserRepository.save(adminUser);
+        return new AuthResponse(null, "Admin registered successfully");
     }
 
     public AuthResponse login(AdminLoginRequest request) {
@@ -38,7 +54,9 @@ public class AdminService {
                 new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
         );
         String token = jwtUtil.generateToken((org.springframework.security.core.userdetails.UserDetails) authentication.getPrincipal());
-        return new AuthResponse(token, "Admin login successful");
+        AdminUser adminUser = adminUserRepository.findByEmail(request.getEmail())
+                .orElseThrow(() -> new IllegalArgumentException("Admin not found"));
+        return new AuthResponse(token, "Admin login successful", adminUser.getName(), adminUser.getEmail());
     }
 
     public Object createCustomer(String name, String email, String password) {
@@ -47,6 +65,10 @@ public class AdminService {
 
     public Object searchCustomers(String query) {
         return customerClient.searchCustomers(query);
+    }
+
+    public Object getAllLoans() {
+        return customerClient.getAllLoans();
     }
 
     @Transactional
@@ -110,8 +132,10 @@ public class AdminService {
 
     @Transactional
     public String sendChatMessage(Long customerId, String message) {
-        ChatMessage chat = new ChatMessage(customerId, "ADMIN", message);
-        chatRepository.save(chat);
-        return "Chat message saved";
+        return customerClient.sendChatMessage(customerId, message);
+    }
+
+    public Object getChatMessages(Long customerId) {
+        return customerClient.getChatMessages(customerId);
     }
 }

@@ -2,54 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>MyFinBank Admin Console</title>
-    <link rel="stylesheet" href="admin.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting - MyFinBank Admin Console</title>
+    <meta http-equiv="refresh" content="0; url=dashboard.html" />
 </head>
 <body>
-<header class="topbar">
-    <div>
-        <p class="eyebrow">Admin Portal</p>
-        <h1>MyFinBank Admin Console</h1>
-    </div>
-    <button id="logoutButton" class="secondary">Logout</button>
-</header>
-<main class="shell">
-    <section class="panel login-panel">
-        <h2>Admin Login</h2>
-        <form id="loginForm" class="grid two">
-            <label>Email<input type="email" id="adminEmail" required /></label>
-            <label>Password<input type="password" id="adminPassword" required /></label>
-            <button type="submit">Login</button>
-        </form>
-        <div id="loginMessage" class="message"></div>
-    </section>
-    <section class="panel hidden" id="adminActions">
-        <div class="panel-heading">
-            <h2>Customer Management</h2>
-            <span>CRUD, activation, search, and loan decisions</span>
-        </div>
-        <div class="grid three">
-            <label>Customer ID<input type="number" id="customerId" /></label>
-            <label>Search Name/Email<input type="text" id="searchQuery" /></label>
-            <label>Name<input type="text" id="customerName" /></label>
-            <label>Email<input type="email" id="customerEmail" /></label>
-            <label>Password<input type="password" id="customerPassword" /></label>
-        </div>
-        <div class="actions">
-            <button id="createCustomerBtn">Create</button>
-            <button id="searchCustomerBtn">Search</button>
-            <button id="fetchCustomerBtn">Fetch</button>
-            <button id="updateCustomerBtn">Update</button>
-            <button id="deleteCustomerBtn" class="danger">Delete</button>
-            <button id="deactivateBtn" class="warning">Deactivate</button>
-            <button id="activateBtn">Activate</button>
-            <button id="approveLoanBtn">Approve Loan</button>
-            <button id="denyLoanBtn" class="warning">Deny Loan</button>
-        </div>
-        <pre id="customerResult"></pre>
-    </section>
-</main>
-<footer>MyFinBank Admin Console</footer>
-<script src="admin.js"></script>
+<script>
+    window.location.replace(localStorage.getItem('adminJwtToken') ? 'dashboard.html' : 'login.html');
+</script>
 </body>
 </html>

@@ -15,6 +15,10 @@ public class CustomerUserDetails implements UserDetails {
         this.customer = customer;
     }
 
+    public Long getCustomerId() {
+        return customer.getId();
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.emptyList();

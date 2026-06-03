@@ -15,6 +15,8 @@ public class LoanApplicationData {
 
     private double amount;
 
+    private String loanType;
+
     private int termMonths;
 
     private double rate;
@@ -26,9 +28,10 @@ public class LoanApplicationData {
     public LoanApplicationData() {
     }
 
-    public LoanApplicationData(Long customerId, double amount, int termMonths, double rate) {
+    public LoanApplicationData(Long customerId, double amount, String loanType, int termMonths, double rate) {
         this.customerId = customerId;
         this.amount = amount;
+        this.loanType = loanType;
         this.termMonths = termMonths;
         this.rate = rate;
     }
@@ -55,6 +58,14 @@ public class LoanApplicationData {
 
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    public String getLoanType() {
+        return loanType;
+    }
+
+    public void setLoanType(String loanType) {
+        this.loanType = loanType;
     }
 
     public int getTermMonths() {

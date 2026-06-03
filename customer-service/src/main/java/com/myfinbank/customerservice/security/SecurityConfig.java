@@ -34,9 +34,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.POST, "/api/customers/register", "/api/customers/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/customers/logout").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/customers/*").permitAll()
                         .requestMatchers("/api/customers/admin/**").permitAll()
-                        .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/api-docs/**", "/customer.html", "/customer.css", "/customer.js", "/static/**").permitAll()
+                        .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/api-docs/**", "/index.html", "/login.html", "/register.html", "/dashboard.html", "/customer.html", "/customer.css", "/customer.js", "/auth.js", "/dashboard.js", "/static/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

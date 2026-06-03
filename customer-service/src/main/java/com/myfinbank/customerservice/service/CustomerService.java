@@ -64,7 +64,9 @@ public class CustomerService {
                 new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
         );
         String token = jwtUtil.generateToken((org.springframework.security.core.userdetails.UserDetails) authentication.getPrincipal());
-        return new AuthResponse(token, "Login successful");
+        Customer customer = customerRepository.findByEmail(request.getEmail())
+                .orElseThrow(() -> new IllegalArgumentException("Customer not found"));
+        return new AuthResponse(token, "Login successful", customer.getId(), customer.getName(), customer.getEmail());
     }
 
     @Transactional
@@ -115,7 +117,12 @@ public class CustomerService {
     @Transactional
     public String applyLoan(LoanRequest request) {
         findActiveCustomer(request.getCustomerId());
-        LoanApplication loan = new LoanApplication(request.getCustomerId(), request.getAmount(), request.getTermMonths(), request.getRate());
+        LoanApplication loan = new LoanApplication(
+                request.getCustomerId(),
+                request.getAmount(),
+                request.getLoanType(),
+                request.getTermMonths(),
+                request.getRate());
         loanRepository.save(loan);
         return "Loan application submitted";
     }
@@ -130,6 +137,11 @@ public class CustomerService {
         ChatMessage chatMessage = new ChatMessage(customer.getId(), request.getSender(), request.getMessage());
         chatRepository.save(chatMessage);
         return "Message sent to bank support";
+    }
+
+    public List<ChatMessage> getChatMessages(Long customerId) {
+        findCustomerById(customerId);
+        return chatRepository.findByCustomerId(customerId);
     }
 
     public Customer findCustomerById(Long id) {
@@ -179,6 +191,16 @@ public class CustomerService {
     public List<LoanApplication> getLoans(Long customerId) {
         findCustomerById(customerId);
         return loanRepository.findByCustomerId(customerId);
+    }
+
+    public BalanceResponse getBalance(Long customerId) {
+        Customer customer = findActiveCustomer(customerId);
+        Account account = findAccount(customer);
+        return new BalanceResponse(customer.getId(), account.getId(), account.getAccountType(), account.getBalance());
+    }
+
+    public List<LoanApplication> getAllLoans() {
+        return loanRepository.findAll();
     }
 
     @Transactional

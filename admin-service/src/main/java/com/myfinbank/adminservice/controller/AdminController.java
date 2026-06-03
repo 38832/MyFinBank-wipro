@@ -25,13 +25,18 @@ public class AdminController {
         return ResponseEntity.ok(adminService.login(request));
     }
 
+    @PostMapping("/register")
+    public ResponseEntity<AuthResponse> register(@RequestBody Map<String, String> request) {
+        return ResponseEntity.ok(adminService.register(request.get("name"), request.get("email"), request.get("password")));
+    }
+
     @PostMapping("/logout")
     public ResponseEntity<?> logout() {
         return ResponseEntity.ok(Map.of("message", "Admin logout successful"));
     }
 
     @GetMapping("/customer/{id}")
-    public ResponseEntity<CustomerData> getCustomer(@PathVariable Long id) {
+    public ResponseEntity<CustomerData> getCustomer(@PathVariable(name = "id") Long id) {
         return ResponseEntity.ok(adminService.loadCustomer(id));
     }
 
@@ -41,42 +46,52 @@ public class AdminController {
     }
 
     @GetMapping("/customers")
-    public ResponseEntity<?> searchCustomers(@RequestParam(required = false) String query) {
+    public ResponseEntity<?> searchCustomers(@RequestParam(name = "query", required = false) String query) {
         return ResponseEntity.ok(adminService.searchCustomers(query));
     }
 
+    @GetMapping("/loans")
+    public ResponseEntity<?> getAllLoans() {
+        return ResponseEntity.ok(adminService.getAllLoans());
+    }
+
     @PutMapping("/customer/{id}")
-    public ResponseEntity<?> updateCustomer(@PathVariable Long id, @RequestBody Map<String, String> request) {
+    public ResponseEntity<?> updateCustomer(@PathVariable(name = "id") Long id, @RequestBody Map<String, String> request) {
         return ResponseEntity.ok(adminService.updateCustomer(id, request.get("name"), request.get("email"), request.get("password")));
     }
 
     @DeleteMapping("/customer/{id}")
-    public ResponseEntity<String> deleteCustomer(@PathVariable Long id) {
+    public ResponseEntity<String> deleteCustomer(@PathVariable(name = "id") Long id) {
         return ResponseEntity.ok(adminService.deleteCustomer(id));
     }
 
     @PutMapping("/customer/{id}/deactivate")
-    public ResponseEntity<String> deactivate(@PathVariable Long id) {
+    public ResponseEntity<String> deactivate(@PathVariable(name = "id") Long id) {
         return ResponseEntity.ok(adminService.deactivateCustomer(id));
     }
 
     @PutMapping("/customer/{id}/activate")
-    public ResponseEntity<String> activate(@PathVariable Long id) {
+    public ResponseEntity<String> activate(@PathVariable(name = "id") Long id) {
         return ResponseEntity.ok(adminService.activateCustomer(id));
     }
 
     @PutMapping("/loan/{id}/approve")
-    public ResponseEntity<String> approveLoan(@PathVariable Long id) {
+    public ResponseEntity<String> approveLoan(@PathVariable(name = "id") Long id) {
         return ResponseEntity.ok(adminService.approveLoan(id));
     }
 
     @PutMapping("/loan/{id}/deny")
-    public ResponseEntity<String> denyLoan(@PathVariable Long id) {
+    public ResponseEntity<String> denyLoan(@PathVariable(name = "id") Long id) {
         return ResponseEntity.ok(adminService.denyLoan(id));
     }
 
     @PostMapping("/customer/{id}/chat")
-    public ResponseEntity<String> chat(@PathVariable Long id, @RequestBody String message) {
-        return ResponseEntity.ok(adminService.sendChatMessage(id, message));
+    public ResponseEntity<String> chat(@PathVariable(name = "id") Long id, @RequestBody Map<String, String> request) {
+        return ResponseEntity.ok(adminService.sendChatMessage(id, request.get("message")));
+    }
+
+    @GetMapping("/customer/{id}/chat")
+    public ResponseEntity<?> getChatMessages(@PathVariable(name = "id") Long id) {
+        return ResponseEntity.ok(adminService.getChatMessages(id));
     }
 }

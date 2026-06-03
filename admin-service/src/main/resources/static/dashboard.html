@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyFinBank Admin Console</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">M</span>
+            <div>
+                <h1>MyFinBank</h1>
+                <p>Admin Console</p>
+            </div>
+        </div>
+        <nav class="nav-list" aria-label="Admin navigation">
+            <a class="active" href="#overview"><span class="material-symbols-outlined">admin_panel_settings</span>Overview</a>
+            <a href="#customers"><span class="material-symbols-outlined">groups</span>Customers</a>
+            <a href="#loans"><span class="material-symbols-outlined">approval</span>Loans</a>
+        </nav>
+        <div class="sidebar-user">
+            <span class="material-symbols-outlined">account_circle</span>
+            <div>
+                <small>Logged in as</small>
+                <strong id="sidebarUsername">Admin</strong>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Operations Workspace</p>
+                <h2>Admin Dashboard</h2>
+            </div>
+            <button id="logoutButton" class="ghost-button" type="button">
+                <span class="material-symbols-outlined">logout</span>
+                Logout
+            </button>
+        </header>
+        <div id="notificationContainer" class="notification-toast"></div>
+
+        <section class="hero" id="overview">
+            <div>
+                <p class="eyebrow">Administrator</p>
+                <h2>Manage customers, account access, and loan decisions.</h2>
+            </div>
+            <div class="hero-stat">
+                <span>Default Role</span>
+                <strong>ADMIN</strong>
+            </div>
+        </section>
+
+        <section class="dashboard-grid admin-workspace">
+            <article class="panel customer-panel editor-panel" id="customers">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Customer Records</p>
+                        <h3>Create Or Update Customer</h3>
+                    </div>
+                    <span class="material-symbols-outlined">manage_accounts</span>
+                </div>
+                <div class="field-grid">
+                    <label>Selected Customer ID<input type="number" id="customerId" placeholder="Select from table" readonly /></label>
+                    <label>Search Name/Email<input type="text" id="searchQuery" placeholder="Search query" /></label>
+                    <label>Name<input type="text" id="customerName" placeholder="Customer name" /></label>
+                    <label>Email<input type="email" id="customerEmail" placeholder="customer@example.com" /></label>
+                    <label>Password<input type="password" id="customerPassword" placeholder="New or existing password" /></label>
+                </div>
+                <div class="action-cards">
+                    <button id="createCustomerBtn" type="button"><span class="material-symbols-outlined">person_add</span>Create</button>
+                    <button id="searchCustomerBtn" class="neutral" type="button"><span class="material-symbols-outlined">search</span>Search</button>
+                    <button id="updateCustomerBtn" type="button"><span class="material-symbols-outlined">edit</span>Update</button>
+                    <button id="clearCustomerBtn" class="neutral" type="button"><span class="material-symbols-outlined">restart_alt</span>Clear</button>
+                </div>
+            </article>
+
+            <article class="panel support-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Support</p>
+                        <h3>Admin Chat</h3>
+                    </div>
+                    <span class="material-symbols-outlined">forum</span>
+                </div>
+                <div class="selected-customer-note">
+                    <span>Selected customer</span>
+                    <strong id="selectedCustomerLabel">None</strong>
+                </div>
+                <div id="adminChatThread" class="chat-thread">
+                    <div class="empty-chat">Select a customer to view the conversation.</div>
+                </div>
+                <div class="chat-compose">
+                    <label>Reply<textarea id="adminChatMessage" placeholder="Reply to the selected customer"></textarea></label>
+                    <button id="adminChatBtn" type="button"><span class="material-symbols-outlined">send</span>Send Reply</button>
+                </div>
+            </article>
+
+            <article class="panel table-panel" id="customerList">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Customers</p>
+                        <h3>Registered Customer List</h3>
+                    </div>
+                    <button id="refreshCustomersBtn" class="neutral compact-button" type="button">
+                        <span class="material-symbols-outlined">refresh</span>
+                        Refresh
+                    </button>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Registered</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody id="customerTableBody">
+                        <tr><td colspan="6">Loading customers...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article class="panel table-panel" id="loanApprovals">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Loans</p>
+                        <h3>Loan Approval List</h3>
+                    </div>
+                    <button id="refreshLoansBtn" class="neutral compact-button" type="button">
+                        <span class="material-symbols-outlined">refresh</span>
+                        Refresh
+                    </button>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Loan ID</th>
+                            <th>Customer ID</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Term</th>
+                            <th>Rate</th>
+                            <th>Status</th>
+                            <th>Applied</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody id="loanTableBody">
+                        <tr><td colspan="9">Loading loan approvals...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+    </main>
+</div>
+<script src="admin-dashboard.js"></script>
+</body>
+</html>
