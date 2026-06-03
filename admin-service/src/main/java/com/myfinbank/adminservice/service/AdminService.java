@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class AdminService {
 
     private final CustomerDataRepository customerRepository;
-    private final ChatMessageRepository chatRepository;
     private final CustomerClient customerClient;
     private final AdminUserRepository adminUserRepository;
     private final AuthenticationManager authenticationManager;
@@ -25,14 +24,12 @@ public class AdminService {
     private final com.myfinbank.adminservice.security.JwtUtil jwtUtil;
 
     public AdminService(CustomerDataRepository customerRepository,
-                        ChatMessageRepository chatRepository,
                         CustomerClient customerClient,
                         AdminUserRepository adminUserRepository,
                         AuthenticationManager authenticationManager,
                         PasswordEncoder passwordEncoder,
                         com.myfinbank.adminservice.security.JwtUtil jwtUtil) {
         this.customerRepository = customerRepository;
-        this.chatRepository = chatRepository;
         this.customerClient = customerClient;
         this.adminUserRepository = adminUserRepository;
         this.authenticationManager = authenticationManager;
